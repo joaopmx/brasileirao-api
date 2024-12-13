@@ -99,11 +99,13 @@ public class ScrapingUtil {
 			partida.setUrlLogoEquipeVisitante(urlLogoEquipeVisitante);
 			LOGGER.info("Url logo equipe da visitante: {}", urlLogoEquipeVisitante);
 			
+			return partida;
+			
 		} catch (IOException e) {
 			LOGGER.error("ERRO AO TENTAR CONECTAR NO GOOGLE COM JSOUP -> {}", e.getMessage());
 		}
 		
-		return partida;
+		return null;
 	}
 	
 	public StatusPartida obtemStatusPartida(Document document) {
